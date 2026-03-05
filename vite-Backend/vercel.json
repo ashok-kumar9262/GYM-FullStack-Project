@@ -1,0 +1,14 @@
+{
+    "builds": [
+        {
+            "src": "./app.js",
+            "use": "@varcel/node"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "/app.js"
+        }
+    ]
+}
