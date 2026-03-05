@@ -27,7 +27,7 @@ console.log("PORT:", process.env.PORT);
 // Middleware
 app.use(
   cors({
-    origin: process.env.FRONTEND_URL || "http://localhost:5073/send/mail",
+    origin: process.env.FRONTEND_URL || "http://localhost:5173/send/mail",
     methods: ["POST"],
     credentials: true,
   })
