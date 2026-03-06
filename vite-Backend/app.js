@@ -27,7 +27,7 @@ console.log("PORT:", process.env.PORT);
 // ===== UPDATED CORS CONFIGURATION =====
 const allowedOrigins = [
   'http://localhost:5173',  // For local development
-  ' "https://full-stack-web-gym.netlify.app",',  // Your live Netlify site
+  // ' "https://full-stack-web-gym.netlify.app",',  // Your live Netlify site
   process.env.FRONTEND_URL  // For flexibility with environment variables
 ].filter(Boolean); // Removes any undefined values
 

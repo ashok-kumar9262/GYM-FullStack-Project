@@ -17,7 +17,7 @@ const Contect = () => {
     try {
       // Make sure the URL is correct
       const { data } = await axios.post(
-        'https://gym-full-stack-project-xfp2.vercel.app',  // Backend URL
+        'https://gym-full-stack-project-15pj.vercel.app',  // Backend URL
         { name, email, message },
         {
           withCredentials: true, // Ensure cookies are sent if needed
