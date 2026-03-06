@@ -27,7 +27,7 @@ console.log("PORT:", process.env.PORT);
 // Middleware
 app.use(
   cors({
-    origin: process.env.FRONTEND_URL || "https://gym-full-stack-project.vercel.app/send/mail",
+    origin: process.env.FRONTEND_URL || "https://full-stack-web-gym.netlify.app",
     methods: ["POST"],
     credentials: true,
   })
