@@ -27,7 +27,7 @@ console.log("PORT:", process.env.PORT);
 // Middleware
 app.use(
   cors({
-    origin: process.env.FRONTEND_URL || "http://localhost:5173/send/mail",
+    origin: process.env.FRONTEND_URL || "https://gym-full-stack-project.vercel.app/send/mail",
     methods: ["POST"],
     credentials: true,
   })
@@ -76,3 +76,9 @@ const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => {
   console.log(`Server listening at port ${PORT}`);
 });
+
+
+// main things 
+// https://gym-full-stack-project.vercel.app/
+
+// 

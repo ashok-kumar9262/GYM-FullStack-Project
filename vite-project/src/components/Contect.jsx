@@ -17,7 +17,7 @@ const Contect = () => {
     try {
       // Make sure the URL is correct
       const { data } = await axios.post(
-        'https://gym-fullstack-project.onrender.com/send/mail',  // Backend URL
+        'http://localhost:4000/send/mail',  // Backend URL
         { name, email, message },
         {
           withCredentials: true, // Ensure cookies are sent if needed
