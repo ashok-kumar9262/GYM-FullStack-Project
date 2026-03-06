@@ -24,15 +24,28 @@ console.log("SMTP_MAIL:", process.env.SMTP_MAIL);
 console.log("SMTP_PASSWORD:", process.env.SMTP_PASSWORD ? "✓ Loaded" : "✗ Not loaded");
 console.log("PORT:", process.env.PORT);
 
-// Middleware
+// ===== UPDATED CORS CONFIGURATION =====
+const allowedOrigins = [
+  'http://localhost:5173',  // For local development
+  ' "https://full-stack-web-gym.netlify.app",',  // Your live Netlify site
+  process.env.FRONTEND_URL  // For flexibility with environment variables
+].filter(Boolean); // Removes any undefined values
+
+// CORS middleware
 app.use(
   cors({
-    origin: process.env.FRONTEND_URL || "https://full-stack-web-gym.netlify.app",
-    methods: ["POST"],
+    origin: allowedOrigins,
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"], // Include OPTIONS for preflight
     credentials: true,
+    allowedHeaders: ["Content-Type", "Authorization"] // Add this
   })
 );
 
+// ===== STEP 4: HANDLE PREFLIGHT REQUESTS =====
+// Add this line right here - after CORS config, before other middleware
+app.options('*', cors()); // This handles all OPTIONS requests
+
+// Other middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -76,9 +89,3 @@ const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => {
   console.log(`Server listening at port ${PORT}`);
 });
-
-
-// main things 
-// https://gym-full-stack-project.vercel.app/
-
-// 
